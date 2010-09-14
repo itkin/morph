@@ -24,7 +24,7 @@ Morph::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
 
-#  config.action_view.javascript_expansions[:defaults] = %w(lib/jquery lib/rails)
+  config.action_view.javascript_expansions[:defaults] = %w(lib/jquery lib/rails)
 
 
 end
