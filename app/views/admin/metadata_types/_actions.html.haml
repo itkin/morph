@@ -1,0 +1,4 @@
+.actions
+  = link_to t('actions.show'), metadata_type
+  = link_to t('actions.edit'), [:edit,metadata_type]
+  = link_to t('actions.delete'), metadata_type, :method => :delete

@@ -1,0 +1,7 @@
+%div[metadata_type]
+
+  = render :partial => 'actions', :locals => { :metadata_type => metadata_type }
+
+  %div
+    %label= t :name, :scope => [:activerecord, :attributes, :metadata_type]
+    %span= metadata_type.name

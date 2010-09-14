@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title Admin Morph
+    = stylesheet_link_tag 'compiled/admin', :cache  => 'admin_all'
+    = javascript_include_tag :defaults, 'lib/jquery-ui', 'lib/itkin/custom_effects', 'lib/itkin/ajax_accordion', 'admin'
+  %body
+    .page
+      = yield

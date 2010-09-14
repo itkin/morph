@@ -1,0 +1,15 @@
+mecca:
+  title_fr: La Mecque
+  title_en: La Mecque
+  description_fr: On a refait la mecque
+  description_en: Let's rebuild Mecca
+  image_1_file_name: photo_1.jpg
+  image_2_file_name: photo_2.jpg
+
+air_france:
+  title_en: Air France
+  title_fr: Air France
+  description_fr: On refait Roissy
+  description_en: Let's rebuild Roissy
+  image_1_file_name: photo_1.jpg
+  image_2_file_name: photo_2.jpg

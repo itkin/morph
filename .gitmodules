@@ -1,0 +1,15 @@
+[submodule "vendor/plugins/dynamic_form"]
+	path = vendor/plugins/dynamic_form
+	url = git://github.com/rails/dynamic_form.git
+[submodule "vendor/plugins/exception_notification"]
+	path = vendor/plugins/exception_notification
+	url = git://github.com/sickill/exception_notification.git
+[submodule "vendor/plugins/labelled_form_for"]
+	path = vendor/plugins/labelled_form_for
+	url = git://github.com/itkin/labelled_form_for.git
+[submodule "vendor/plugins/javascript_stuff"]
+	path = vendor/plugins/javascript_stuff
+	url = git://github.com/itkin/javascript_stuff.git
+[submodule "vendor/plugins/constants_in_db"]
+	path = vendor/plugins/constants_in_db
+	url = git://github.com/itkin/constants_in_db.git

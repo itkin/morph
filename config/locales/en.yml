@@ -1,0 +1,15 @@
+en:
+  actions:
+    show: Show
+    edit: Edit
+    delete: Delete
+    cancel: Cancel
+    submit: Valider
+
+  activerecord:
+    attributes:
+      project:
+        title_fr: Title (fr)
+        title_en: Title (en)
+        description_en: Description (en)
+        description_fr: Description (fr)

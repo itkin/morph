@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title Morph
+    = stylesheet_link_tag 'compiled/application', :cache  => 'application_all'
+    = javascript_include_tag :defaults
+  %body
+    .page
+      = yield

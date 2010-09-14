@@ -1,0 +1,10 @@
+%div[user]
+
+  = render :partial => 'actions', :locals => { :user => user }
+
+  %div
+    %label= t :name, :scope => [:activerecord, :attributes, :user]
+    %span= user.name
+  %div
+    %label= t :email, :scope => [:activerecord, :attributes, :user]
+    %span= user.email

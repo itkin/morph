@@ -1,0 +1,16 @@
+%div[project]
+
+  = render :partial => 'actions', :locals => { :project => project }
+
+  %div
+    %label= t :title_en, :scope => [:activerecord, :attributes, :project]
+    %span= project.title_en
+  %div
+    %label= t :title_fr, :scope => [:activerecord, :attributes, :project]
+    %span= project.title_fr
+  %div
+    %label= t :description_fr, :scope => [:activerecord, :attributes, :project]
+    %span= project.description_fr
+  %div
+    %label= t :description_en, :scope => [:activerecord, :attributes, :project]
+    %span= project.description_en

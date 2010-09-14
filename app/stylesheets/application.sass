@@ -1,0 +1,49 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset"
+@import 'page'
+//// To configure blueprint, edit the partials/base.sass file.
+//@import "partials/base";
+//
+//// Import all the default blueprint modules so that we can access their mixins.
+//@import "blueprint";
+//
+//// Combine the partials into a single screen stylesheet.
+//@import "partials/page";
+//@import "partials/form";
+//@import "partials/two_col";
+
+
+body
+  .page
+    width: 750px
+
+    .projects
+      margin-top: 90px
+
+      .project
+        float: right
+        margin-bottom: 70px
+
+        h3
+          color: $blue
+          font-size: 1.1em
+          margin-bottom: 15px
+
+        .video
+          width: 480px
+          height: 260px
+          background: image-url('video.jpg')
+          margin-bottom: 15px
+
+        .images
+          float: right
+          margin-bottom: 15px
+          img
+            float: right
+            &.first
+              margin-right: 30px
+
+        .description
+          font-size: 0.8em
+          clear: right
+          float: right

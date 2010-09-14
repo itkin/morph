@@ -1,0 +1,19 @@
+=labelled_form_for [:admin,@project], :html => { :multipart => true } do |f|
+  .field= f.text_field :title_en
+  .field= f.text_field :title_fr
+  .field= f.file_field :image_1
+  .field= f.file_field :image_2
+  - for metadata in f.object.metadata
+    =fields_for :metadata_attributes, metadata do |metadata_form|
+      = render :partial => 'admin/metadata/form_fields', :locals => { :form => metadata_form }
+  = link_to "Ajouter", :class => "add_metadata"
+
+
+  .field= f.text_area :description_fr
+  .field= f.text_area :description_en
+
+  .field.buttons
+    = f.submit t('actions.submit')
+    = link_to t('actions.cancel'), (@project.new_record? ? admin_projects_path : [:admin,@project])
+
+

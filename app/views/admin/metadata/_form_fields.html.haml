@@ -1,0 +1,6 @@
+.field
+  %label Méta-données
+  %span
+    = form.hidden_field :id
+    = form.collection_select :metadata_type_id, MetadataType.all, :id, :name, :include_blank => true
+    = form.text_field :value
