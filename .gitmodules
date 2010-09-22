@@ -13,3 +13,6 @@
 [submodule "vendor/plugins/constants_in_db"]
 	path = vendor/plugins/constants_in_db
 	url = git://github.com/itkin/constants_in_db.git
+[submodule "vendor/plugins/youtube-model"]
+	path = vendor/plugins/youtube-model
+	url = git@github.com:itkin/youtube-model.git
