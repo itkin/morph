@@ -1,2 +1,6 @@
-=labelled_form_for @metadata_type do |f|
-  .field= f.text_field :name
+=labelled_form_for [:admin, @metadata_type] do |f|
+  = f.text_field :name
+  .buttons
+    = f.submit
+    = link_to "Annuler", [:admin, @metadata_type]
+

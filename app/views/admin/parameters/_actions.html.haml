@@ -1,0 +1,4 @@
+.actions
+  = link_to t('actions.show', :default => 'show'), [:admin, parameter]
+  = link_to t('actions.edit', :default => 'edit'), [:edit,:admin, parameter]
+  = link_to t('actions.delete', :default => 'delete'), [:admin, parameter], :method => :delete

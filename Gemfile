@@ -34,4 +34,6 @@ gem "jquery-rails", :git => "git://github.com/itkin/jquery-rails.git"
 gem "compass"
 gem "haml"
 gem "paperclip"
-
+gem "will_paginate"
+gem 'devise'
+gem "meta_where"

@@ -1,0 +1,8 @@
+%div[parameter]
+
+  %div
+    %label= t :key, :scope => [:activerecord, :attributes, :parameter], :default => "key"
+    %span= parameter.key
+  %div
+    %label= t :value, :scope => [:activerecord, :attributes, :parameter], :default => "value"
+    %span= parameter.value

@@ -1,1 +1,4 @@
+- unless request.xhr?
+  = render :partial => 'actions', :locals => { :metadata_type => metadata_type }
+= flash_message
 = render :partial => @metadata_type

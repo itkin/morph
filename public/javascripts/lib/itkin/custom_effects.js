@@ -3,8 +3,8 @@
     var fade_out_speed = fade_out_speed || 'slow';
     var fade_in_speed = fade_in_speed || 'fast';
     return $.each(this, function(){
-      $(this).fadeOut(fade_out_speed,function(){
-        $(this).html(html).fadeIn(fade_in_speed)
+      $(this).fadeTo(fade_out_speed,0,function(){
+        $(this).html(html).fadeTo(fade_in_speed,1)
       });
     })
   }
@@ -15,9 +15,9 @@
         html = html ;
     return $.each(this, function(){
       $wrapper = $(this).wrap('<div class="wrapper"></div>').parent();
-      $wrapper.fadeOut(fade_out_speed, function(){
+      $wrapper.fadeTo(fade_out_speed,0, function(){
         $(this).html(html)
-      }).fadeIn(fade_in_speed,function(){
+      }).fadeTo(fade_in_speed,1,function(){
         $(this).children().unwrap()
       });
     })

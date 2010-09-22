@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
     %title Morph
@@ -6,4 +6,22 @@
     = javascript_include_tag :defaults
   %body
     .page
-      = yield
+      #header
+      #side-content
+        %h1= Parameter::HEADLINE.value
+        %ul.postal_address
+          %li= Parameter::NAME.value
+          %li= Parameter::STREET.value
+          %li= Parameter::CITY.value
+          %li= Parameter::COUNTRY.value
+        %ul.phone_numbers
+          %li
+            %label T/
+            = Parameter::PHONE.value
+          %li
+            %label F/
+            = Parameter::CELL_PHONE.value
+        #contact
+          %label Contacts
+      #main-content
+        = yield

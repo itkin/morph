@@ -1,4 +1,6 @@
 %li[user]
-  = render :partial => 'actions', :locals => { :user => user }
-  = user.name
-  = user.email
+  %h2
+    = render :partial => 'actions', :locals => { :user => user }
+    = user.name
+  %div
+    = render :partial => user

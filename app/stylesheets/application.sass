@@ -1,6 +1,9 @@
 // This import applies a global reset to any page that imports this stylesheet.
 @import "blueprint/reset"
-@import 'page'
+@import "partials/base"
+@import "partials/page"
+@import "compass/utilities/lists/bullets"
+
 //// To configure blueprint, edit the partials/base.sass file.
 //@import "partials/base";
 //
@@ -12,38 +15,81 @@
 //@import "partials/form";
 //@import "partials/two_col";
 
+$side-content-columns: floor($blueprint-grid-columns / 3)
+$main-content-columns: $blueprint-grid-columns - $side-content-columns
+$title-font-size: 20px
+$font-size: 10px
 
 body
+  font-size: $font-size
   .page
-    width: 750px
+    +container
+    #header
+      +column($blueprint-grid-columns)
+      height: 120px
+      background: image-url('logo_1.gif') left center no-repeat
+    #side-content
+      +column($side-content-columns)
+      width: 270px
+      h1
+        color: white
+        font-size: $title-font-size
+        text-transform: uppercase
+      ul
+        +no-bullets
+        padding: 0
+        margin: 0
+        margin-bottom: 10px
+    #main-content
+      +column($main-content-columns, true)
+      width: 480px
+      .projects
+        .project
+          margin-bottom: 70px
+          position: relative
+          float: left
+          width: 100%
 
-    .projects
-      margin-top: 90px
+          h3
+            font-size: $title-font-size
+            margin-bottom: 15px
 
-      .project
-        float: right
-        margin-bottom: 70px
+          .video
+            width: 480px
+            height: 260px
+            background: image-url('video.jpg')
+            margin-bottom: 15px
 
-        h3
-          color: $blue
-          font-size: 1.1em
-          margin-bottom: 15px
-
-        .video
-          width: 480px
-          height: 260px
-          background: image-url('video.jpg')
-          margin-bottom: 15px
-
-        .images
-          float: right
-          margin-bottom: 15px
-          img
+          .images
             float: right
-            &.first
-              margin-right: 30px
+            margin-bottom: 15px
+            img
+              float: right
+              &.first
+                margin-right: 30px
 
-        .description
-          font-size: 0.8em
-          clear: right
-          float: right
+          .description
+            clear: right
+            float: right
+
+          .metadata
+            float: left
+            width: 170px
+            position: relative
+            ul
+              +no-bullets
+              float: left
+              padding: 0
+              margin: 0
+              li.metadata_type_name
+                float: left
+                clear: left
+                span
+                  float: left
+                  padding-right: 1em
+                  color: $blue
+                  text-transform: capitalize
+                ul.metadata_values
+                  float: left
+
+

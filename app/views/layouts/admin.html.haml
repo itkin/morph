@@ -2,8 +2,20 @@
 %html
   %head
     %title Admin Morph
-    = stylesheet_link_tag 'compiled/admin', :cache  => 'admin_all'
-    = javascript_include_tag :defaults, 'lib/jquery-ui', 'lib/itkin/custom_effects', 'lib/itkin/ajax_accordion', 'admin'
+    = stylesheet_link_tag 'redmond/jquery-ui-1.8.4.custom.css', 'compiled/admin' , :cache  => 'admin_all'
+    = javascript_include_tag :defaults, 'lib/jquery-ui', 'lib/itkin/custom_effects', 'lib/jquery.livequery', 'lib/itkin/ajax_accordion', 'lib/itkin/ajax_multipart_form',  'lib/itkin/search_box','admin'
   %body
     .page
-      = yield
+      %h1 Admin
+      .authentification_links
+        %span.current_user= "#{current_user.name}, "
+        = link_to "déconnection", destroy_user_session_path
+      #tabs
+        %ul
+          %li= link_to "Projets", admin_projects_path
+          %li= link_to "Type de métadonnées", admin_metadata_types_path
+          %li= link_to "Administrateurs", admin_users_path
+          %li= link_to "Paramètres", admin_parameters_path
+
+        #ui-tabs-1
+          = yield

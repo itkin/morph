@@ -1,14 +1,10 @@
-// Ajouter une option ajax_selector, qui identifie des elements
-// sur clic
-//  - fermer l'accordeon,
-//  - lancer la requete ajax
-//  - récuperer son le cotnenu html retourné par le serveur et mettre a jour l'accordeon
-//  - rouvrir l'accordeon a la position voulue
-
 (function($){
   var options ;
   options = $.extend({}, $.ui.accordion.prototype.options, {
-      ajaxSelectors: null
+    collapsible: true,
+    active: false,
+    autoHeight: false,
+    ajaxSelectors: [['form', 'submit'],['.actions a, .buttons a', 'click']]
   });
   var AjaxAccordion = $.extend({}, $.ui.accordion.prototype, {
     options: options,
@@ -23,40 +19,62 @@
     _bindAjax: function(selector, eventType){
       var self = this;
       //On utilise livequery pour binder l'element final lui meme
-      this.element.find(selector).livequery(
-        function(){
-          $(this)
-            .bind(eventType,function(e){
-              e.stopImmediatePropagation();
-              e.preventDefault();
-              var $elt = $(this);
-              self.element
-                .queue(function(){
-                  $(this).ajaxAccordion('activate',-1);
-                  $(this).dequeue();
-                })
-                .delay(200)
-                .queue(function(){
-                  if($elt.attr('data-remote')){
-                    $elt.callRemote();
-                  }
-                  $(this).dequeue();
-                });
-            });
+      this.element.find(selector).livequery(function(){
+        var $elt = $(this);
+        var $accordion_tab = $elt.closest('.ajax-accordion-tab');
+        $elt.attr('data-type',"html");
+        if ($elt.attr('data-method') == 'delete'){
+          $elt.bind('ajax:success',function(){
+            $accordion_tab.fadeOut('slow');
+          })
         }
-      );
-      self.element.delegate('.ajaxAccordion-tab', 'ajax:complete', function(){
-        self.activate($(this).index());
+        else if ($elt[0].nodeName == 'FORM'){
+          $elt.bind('ajax:complete', function(status, xhr){
+            var $data = $($.httpData(xhr,'html'));
+            if (xhr.status == 200){
+              $accordion_tab.find('.header-content').html($data.children().first().html());
+              $accordion_tab.children().last().html($data.children().last().html());
+              self.activate($accordion_tab.index());
+            } else{
+              $accordion_tab.children().last().html($data);
+              self.activate($accordion_tab.index());
+            }
+          });
+        }
+        else{
+          $elt.bind('ajax:success', function(data, status, xhr){
+            $accordion_tab.children().last().html(status);
+            self.activate($accordion_tab.index());
+          });
+        }
+        $elt.bind(eventType,
+          function(e){
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            self.element
+              .queue(function(){
+                $(this).ajaxAccordion('activate',-1);
+                $(this).dequeue();
+              })
+              .delay(200)
+              .queue(function(){
+                $elt.callRemote();
+                $(this).dequeue();
+              });
+          }
+        );
       });
     },
     _create: function(){
-      this.element.children().addClass('ajaxAccordion-tab');
+      this.element.children().addClass('ajax-accordion-tab');
+      this.element.find(this.options.header).wrapInner('<a class="header-content"></a>');
       this._enableAjax();
       $.ui.accordion.prototype._create.call(this);
 
+
     },
     destroy: function(){
-      this.element.children().removeClass('ajaxAccordion-tab');
+      this.element.children().removeClass('ajax-accordion-tab');
       this._disableAjax();
     }
 

@@ -1,0 +1,20 @@
+@mixin form($field_margin: '5px 20px')
+  padding: 5px 0
+  position: relative
+  .field
+    float: left
+    margin: $field_margin
+    width: 100%
+    label
+      float: left
+      font-weight: bold
+      width: 20%
+    input, textarea, select
+      float: right
+      width: 78%
+    textarea
+      height: 5em
+
+  .stretcher
+    width: 100%
+    clear: both

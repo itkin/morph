@@ -27,9 +27,13 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.save
+
+    params[:user].delete(:password) if params[:user][:password].blank?
+    params[:user].delete(:password_confirmation) if params[:user][:password_confirmation].blank?
+    if @user.update_attributes(params[:user])
       render :action => :update
     else
+      response.status = 208
       render :action => :edit
     end
   end

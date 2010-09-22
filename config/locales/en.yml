@@ -1,5 +1,6 @@
 en:
   actions:
+    new: New
     show: Show
     edit: Edit
     delete: Delete
@@ -7,9 +8,17 @@ en:
     submit: Valider
 
   activerecord:
+    models:
+      project: project
+
     attributes:
       project:
         title_fr: Title (fr)
         title_en: Title (en)
         description_en: Description (en)
         description_fr: Description (fr)
+      metadata_type:
+        name: Name
+      users:
+        name: Name
+        email: Email

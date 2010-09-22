@@ -5,11 +5,18 @@
 
 var ajaxMulitipartForm = {
 
-  setup: function(){
+  setup: function(before_submit){
     $("form[data-remote=true][enctype=multipart\/form-data]")
       .livequery(
         function(){
           ajaxMulitipartForm.addIframe(this);
+          $(this).bind('submit', function(e){
+            $(this).trigger('ajax-multipart:submit');
+            return true
+          });
+          if (before_submit){
+            $(this).bind('ajax-multipart:submit',before_submit)
+          }
         },
         function(){
           ajaxMulitipartForm.removeIframe(this);

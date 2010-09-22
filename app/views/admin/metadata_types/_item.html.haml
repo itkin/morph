@@ -1,3 +1,8 @@
 %li[metadata_type]
-  = render :partial => 'actions', :locals => { :metadata_type => metadata_type }
-  = metadata_type.name
+  %h2
+    = render :partial => 'actions', :locals => { :metadata_type => metadata_type }
+    = metadata_type.name
+  %div
+    = flash_message
+    = render :partial => metadata_type
+

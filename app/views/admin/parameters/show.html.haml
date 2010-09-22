@@ -1,0 +1,4 @@
+- unless request.xhr?
+  = render :partial => 'actions', :locals => { :parameter => parameter }
+
+= render :partial => @parameter

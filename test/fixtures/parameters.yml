@@ -1,0 +1,27 @@
+headline:
+  key: headline
+  value: film & vfx
+
+name:
+  key: name
+  value: Morph
+
+street:
+  key: street
+  value: 5, rue de Nemours
+
+city:
+  key: city
+  value: 75011 PARIS
+
+country:
+  key: country
+  value: FRANCE
+
+phone:
+  key: phone
+  value: +33 (0)1 47 00 40 15
+
+cell_phone:
+  key: cell_phone
+  value: +33 (0)1 47 00 40 15

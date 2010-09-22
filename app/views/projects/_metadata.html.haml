@@ -1,0 +1,15 @@
+%ul
+  - metadata.each_with_index do |data,i|
+    - if i == 0 or data.metadata_type_name != metadata[i-1].metadata_type_name
+      -unless i == 0
+        </li></ul>
+      <li class='metadata_type_name'>
+      %span= data.metadata_type_name
+      <ul class='metadata_values'>
+      <li>
+      = data.value
+      </li>
+    - else
+      <li>
+      = data.value
+      </li>

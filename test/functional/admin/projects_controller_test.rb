@@ -18,6 +18,7 @@ class Admin::ProjectsControllerTest < ActionController::TestCase
 
   def test_should_create_project
     assert_difference('Project.count') do
+      debugger
       post :create, :project => @project.attributes
     end
     assert_not_nil assigns(:projects)

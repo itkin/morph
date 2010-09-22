@@ -81,7 +81,7 @@ a img {
   border: none;
 }
 
-/* line 11, ../../../app/stylesheets/partials/_page.scss */
+/* line 11, ../../../app/stylesheets/partials/_page.sass */
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -391,5 +391,171 @@ body .removed {
   background: #990000;
   color: white;
 }
+/* line 21, ../../../app/stylesheets/partials/_page.sass */
+body h1, body h2, body h3, body h4 {
+  color: #5fd9e5;
+}
 
-/*@include blueprint-scaffolding("body.bp");*/
+/*@include blueprint-scaffolding("body.bp"); */
+/* line 8, ../../../app/stylesheets/admin.sass */
+.page {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 10, ../../../app/stylesheets/admin.sass */
+.page .authentification_links {
+  text-align: right;
+  margin-bottom: 20px;
+}
+/* line 13, ../../../app/stylesheets/admin.sass */
+.page .authentification_links a, .page .authentification_links a:visited {
+  color: white;
+}
+/* line 18, ../../../app/stylesheets/admin.sass */
+.page #tabs form {
+  padding: 5px 0;
+  position: relative;
+}
+/* line 4, ../../../app/stylesheets/partials/itkin/_form.sass */
+.page #tabs form .field {
+  float: left;
+  margin: "5px 20px";
+  width: 100%;
+}
+/* line 8, ../../../app/stylesheets/partials/itkin/_form.sass */
+.page #tabs form .field label {
+  float: left;
+  font-weight: bold;
+  width: 20%;
+}
+/* line 12, ../../../app/stylesheets/partials/itkin/_form.sass */
+.page #tabs form .field input, .page #tabs form .field textarea, .page #tabs form .field select {
+  float: right;
+  width: 78%;
+}
+/* line 15, ../../../app/stylesheets/partials/itkin/_form.sass */
+.page #tabs form .field textarea {
+  height: 5em;
+}
+/* line 18, ../../../app/stylesheets/partials/itkin/_form.sass */
+.page #tabs form .stretcher {
+  width: 100%;
+  clear: both;
+}
+/* line 20, ../../../app/stylesheets/admin.sass */
+.page #tabs form .metadata-fields {
+  float: left;
+  width: 100%;
+}
+/* line 23, ../../../app/stylesheets/admin.sass */
+.page #tabs form .metadata-fields label {
+  float: left;
+  width: 20%;
+}
+/* line 26, ../../../app/stylesheets/admin.sass */
+.page #tabs form .metadata-fields .inline-field {
+  float: right;
+  width: 78%;
+}
+/* line 29, ../../../app/stylesheets/admin.sass */
+.page #tabs form .metadata-fields a.add_metadata {
+  clear: right;
+  display: block;
+}
+/* line 3, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+.page #tabs .ajax-accordion h2 > a {
+  line-height: 27px;
+}
+/* line 5, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+.page #tabs .ajax-accordion h2 img {
+  float: left;
+  margin-right: 10px;
+}
+/* line 9, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+.page #tabs .ajax-accordion .actions {
+  float: right;
+}
+/* line 11, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+.page #tabs .ajax-accordion .actions a {
+  display: inline;
+  padding: 0 0.5em;
+}
+/* line 15, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+.page #tabs .ajax-accordion .ui-icon.ui-icon-triangle-1-e.loader {
+  background: url-image("loader.gif") left top no-repeat;
+}
+/* line 37, ../../../app/stylesheets/admin.sass */
+.page #tabs .pagination, .page #tabs .options {
+  text-align: right;
+  margin: 10px 0;
+  color: #2e6e9e;
+  font-weight: bold;
+}
+/* line 42, ../../../app/stylesheets/admin.sass */
+.page #tabs .pagination a, .page #tabs .pagination a:visited, .page #tabs .pagination a:focus, .page #tabs .pagination span, .page #tabs .options a, .page #tabs .options a:visited, .page #tabs .options a:focus, .page #tabs .options span {
+  color: #2e6e9e;
+  text-decoration: none;
+}
+/* line 45, ../../../app/stylesheets/admin.sass */
+.page #tabs .pagination a.current, .page #tabs .pagination a:visited.current, .page #tabs .pagination a:focus.current, .page #tabs .pagination span.current, .page #tabs .options a.current, .page #tabs .options a:visited.current, .page #tabs .options a:focus.current, .page #tabs .options span.current {
+  text-decoration: underline;
+}
+/* line 48, ../../../app/stylesheets/admin.sass */
+.page #tabs .pagination .disabled, .page #tabs .options .disabled {
+  display: none;
+}
+/* line 55, ../../../app/stylesheets/admin.sass */
+.page #tabs .project label {
+  float: left;
+  width: 20%;
+}
+/* line 58, ../../../app/stylesheets/admin.sass */
+.page #tabs .project .description {
+  position: relative;
+}
+/* line 60, ../../../app/stylesheets/admin.sass */
+.page #tabs .project .description label {
+  position: absolute;
+  left: 0;
+}
+/* line 63, ../../../app/stylesheets/admin.sass */
+.page #tabs .project .description div {
+  float: left;
+  position: relative;
+  left: 20%;
+  width: 78%;
+}
+/* line 69, ../../../app/stylesheets/admin.sass */
+.page #tabs .project div.metadata-cont {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 73, ../../../app/stylesheets/admin.sass */
+.page #tabs .project div.metadata-cont ul {
+  list-style: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+/* line 11, ../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
+.page #tabs .project div.metadata-cont ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+/* line 78, ../../../app/stylesheets/admin.sass */
+.page #tabs .project div.metadata-cont ul li.metadata_type_name {
+  float: left;
+}
+/* line 80, ../../../app/stylesheets/admin.sass */
+.page #tabs .project div.metadata-cont ul li.metadata_type_name span {
+  float: left;
+  padding-right: 1em;
+}
+/* line 83, ../../../app/stylesheets/admin.sass */
+.page #tabs .project div.metadata-cont ul li.metadata_type_name ul.metadata_values {
+  float: left;
+}

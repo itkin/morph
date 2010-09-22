@@ -39,6 +39,7 @@ module Morph
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    config.action_view.javascript_expansions[:defaults] = %w(lib/jquery lib/rails lib/jquery-ui)
 
     config.generators do |g|
       g.orm :active_record
@@ -47,3 +48,4 @@ module Morph
     end
   end
 end
+#google api key AI39si6Mbs2lru8kp9I8SOV5tjld_LIz7DPy4j_5oyypH9tuiN7tV1fVuCaWc2BiToyFOzdaTLcZbHXA_pCUvE4umha9oNthHw

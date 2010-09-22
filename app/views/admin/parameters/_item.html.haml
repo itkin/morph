@@ -1,0 +1,8 @@
+%li[parameter]
+  %h2
+    = render :partial => 'actions', :locals => { :parameter => parameter }
+    %label= parameter.key + ':'
+    = parameter.value
+  %div
+    = flash_message
+    = render :partial => parameter

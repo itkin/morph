@@ -1,10 +1,8 @@
 %div[user]
 
-  = render :partial => 'actions', :locals => { :user => user }
-
   %div
-    %label= t :name, :scope => [:activerecord, :attributes, :user]
+    %label= t :name, :scope => [:activerecord, :attributes, :user], :default => 'name'
     %span= user.name
   %div
-    %label= t :email, :scope => [:activerecord, :attributes, :user]
+    %label= t :email, :scope => [:activerecord, :attributes, :user], :default => 'email'
     %span= user.email

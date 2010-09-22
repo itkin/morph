@@ -1,6 +1,7 @@
 %li[project]
-  = render :partial => 'actions', :locals => { :project => project }
-  = project.title_en
-  = project.title_fr
-  = project.description_fr
-  = project.description_en
+  %h2
+    = render :partial => 'actions', :locals => { :project => project }
+    = image_tag(project.image_1.url(:small))
+    %span.title= project.title
+  %div
+    = render :partial => project

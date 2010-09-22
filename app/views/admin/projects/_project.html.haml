@@ -1,16 +1,18 @@
 %div[project]
 
-  = render :partial => 'actions', :locals => { :project => project }
+  %div
+    %label Titre
+    %span= [:en, :fr].map{|key| project.title(key)}.join(' / ')
+  %div
+    %label Images
+    %span
+      = image_tag project.image_1.url(:small)
+      = image_tag project.image_2.url(:small)
+  .description
+    %label Description
+    - [:en, :fr].each do |key|
+      %div= project.description(key)
 
-  %div
-    %label= t :title_en, :scope => [:activerecord, :attributes, :project]
-    %span= project.title_en
-  %div
-    %label= t :title_fr, :scope => [:activerecord, :attributes, :project]
-    %span= project.title_fr
-  %div
-    %label= t :description_fr, :scope => [:activerecord, :attributes, :project]
-    %span= project.description_fr
-  %div
-    %label= t :description_en, :scope => [:activerecord, :attributes, :project]
-    %span= project.description_en
+  .metadata-cont
+    %label Méta-données
+    = render :partial => 'metadata', :locals =>{:metadata => project.metadata}

@@ -1,15 +1,15 @@
 GIT
   remote: git://github.com/itkin/jquery-rails.git
-  revision: b62e12c1e0b59cc397cc2fee8bd03664a06c2e39
+  revision: 6f67f381a6b9089f2262525bd8be98a0610c9d7f
   specs:
     jquery-rails (0.1.2)
       rails (~> 3.0.0)
 
 GIT
   remote: git://github.com/itkin/starter.git
-  revision: 507a08adec93cf6158d86da97372dcddabccbd4c
+  revision: 58ddf1e5ca6e2497cc62090858d9b9b2f5a7f598
   specs:
-    starter (0.0.6)
+    starter (0.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -43,6 +43,7 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    bcrypt-ruby (2.1.2)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -53,6 +54,9 @@ GEM
     columnize (0.3.1)
     compass (0.10.5)
       haml (>= 3.0.4)
+    devise (1.1.2)
+      bcrypt-ruby (~> 2.1.2)
+      warden (~> 0.10.7)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.18)
@@ -63,9 +67,13 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    meta_where (0.9.3)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 1.0.1)
     mime-types (1.16)
     mysql (2.8.1)
-    net-scp (1.0.3)
+    net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
@@ -100,10 +108,13 @@ GEM
       ruby-debug-base (~> 0.10.3.0)
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
-    thor (0.14.0)
+    thor (0.14.1)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    warden (0.10.7)
+      rack (>= 1.0.0)
+    will_paginate (2.3.15)
 
 PLATFORMS
   ruby
@@ -111,10 +122,13 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   compass
+  devise
   haml
   jquery-rails!
+  meta_where
   mysql
   paperclip
   rails (= 3.0.0)
   ruby-debug
   starter!
+  will_paginate

@@ -1,11 +1,9 @@
 Morph::Application.routes.draw do
 
-  resources :metadatas
-
-  resources :metadata_types
+  devise_for :users
 
   namespace "admin" do
-    resources :projects, :users
+    resources :projects, :users, :metadata_types, :parameters
     root :to => 'projects#index'
   end
 

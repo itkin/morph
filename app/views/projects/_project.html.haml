@@ -1,9 +1,10 @@
 %div[project]
   %h3= project.title
   .video
-
+  .metadata= render :partial => 'metadata', :locals => { :metadata => project.metadata }
   .images
     = image_tag project.image_2.url(:normal) if project.image_2?
     = image_tag project.image_1.url(:normal), :class=> 'first' if project.image_1?
+
   .description= project.description
 

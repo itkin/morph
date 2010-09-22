@@ -1,6 +1,9 @@
-=labelled_form_for @user do |f|
-  .field= f.text_field :name
-  .field= f.text_field :email
-  .field.buttons
+=labelled_form_for [:admin,@user] do |f|
+  = f.error_messages
+  = f.text_field :name
+  = f.text_field :email
+  = f.password_field :password
+  = f.password_field :password_confirmation
+  .buttons
     = f.submit t('actions.submit')
-    = link_to t('actions.cancel'), (@project.new_record? ? projects_path : @project)
+    = link_to t('actions.cancel'), (@user.new_record? ? admin_users_path : [:admin,@user])

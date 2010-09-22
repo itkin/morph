@@ -1,7 +1,7 @@
 class Admin::ProjectsController < Admin::ApplicationController
 
   def index
-    @projects = Project.all
+    @projects = Project.search(params[:search]).paginate :per_page =>10, :page => params[:page], :order => 'created_at DESC'
   end
 
   def show
@@ -20,16 +20,16 @@ class Admin::ProjectsController < Admin::ApplicationController
     @project = Project.new(params[:project])
     if @project.save
       @projects = Project.all
-      render :action => :index
+      responds_to_parent{ render :action => :index }
     else
-      render :action => :new
+      responds_to_parent{ render :action => :new }
     end
   end
 
   def update
     @project = Project.find(params[:id])
-    if @project.save
-      render :action => :show
+    if @project.update_attributes(params[:project])
+      responds_to_parent{ render :action => 'update.js.erb' }
     else
       render :action => :edit
     end

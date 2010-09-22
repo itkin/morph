@@ -1,9 +1,11 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+nicolas:
+  name: nicolas
+  email: nicolas@w3bflows.com
 
-one:
-  name: MyString
-  email: MyString
+julien:
+  name: julien Lomessy
+  email: jlomessy@morph.fr
 
-two:
-  name: MyString
-  email: MyString
+mirjam:
+  name: Mirjam
+  email: mlinschooten@gmail.com

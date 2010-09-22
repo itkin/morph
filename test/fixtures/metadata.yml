@@ -2,3 +2,110 @@ client_mecqa:
   value: Allah
   metadata_type: client
   project: mecca
+
+date_mecqa:
+  value: 11/10/1982
+  metadata_type: date
+  project: mecca
+
+location_mecqa:
+  value: France
+  metadata_type: location
+  project: mecca
+
+
+client_air_france:
+  value: Allah
+  metadata_type: client
+  project: air_france
+
+date_air_france:
+  value: 11/10/1982
+  metadata_type: date
+  project: air_france
+
+location_air_france:
+  value: France
+  metadata_type: location
+  project: air_france
+
+
+client_project_3:
+  value: Allah
+  metadata_type: client
+  project: project_3
+
+date_project_3:
+  value: 11/10/1982
+  metadata_type: date
+  project: project_3
+
+location_project_3:
+  value: France
+  metadata_type: location
+  project: project_3
+
+
+client_project_4:
+  value: Allah
+  metadata_type: client
+  project: project_4
+
+date_project_4:
+  value: 11/10/1982
+  metadata_type: date
+  project: project_4
+
+location_project_4:
+  value: France
+  metadata_type: location
+  project: project_4
+
+
+client_project_5:
+  value: Allah
+  metadata_type: client
+  project: project_5
+
+date_project_5:
+  value: 11/10/1982
+  metadata_type: date
+  project: project_5
+
+location_project_5:
+  value: France
+  metadata_type: location
+  project: project_5
+
+
+client_project_6:
+  value: Allah
+  metadata_type: client
+  project: project_6
+
+date_project_6:
+  value: 11/10/1982
+  metadata_type: date
+  project: project_6
+
+location_project_6:
+  value: France
+  metadata_type: location
+  project: project_6
+
+
+client_project_7:
+  value: Allah
+  metadata_type: client
+  project: project_7
+
+date_project_7:
+  value: 11/10/1982
+  metadata_type: date
+  project: project_7
+
+location_project_7:
+  value: France
+  metadata_type: location
+  project: project_7
+

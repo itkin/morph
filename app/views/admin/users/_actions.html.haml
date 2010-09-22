@@ -1,4 +1,4 @@
 .actions
-  = link_to t('actions.show'), user
-  = link_to t('actions.edit'), [:edit,user]
-  = link_to t('actions.delete'), user, :method => :delete
+  = link_to t('actions.show'), [:admin,user]
+  = link_to t('actions.edit'), [:edit,:admin,user]
+  = link_to t('actions.delete'), [:admin,user], :method => :delete
