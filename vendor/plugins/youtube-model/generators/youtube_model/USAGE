@@ -1,3 +1,0 @@
-./script/generate youtube_model MODELNAME
-
-Generates an ActiveResource model that is ready for interact with YouTube API
