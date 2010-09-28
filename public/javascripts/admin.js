@@ -17,7 +17,7 @@ $(function(){
     $(this).ajaxAccordion();
   });
 
-  $("ul.projects").livequery(function(){
+  $("ul.projects, ul.videos").livequery(function(){
     $(this).ajaxAccordion({ajaxSelectors: [['.actions a, .buttons a', 'click']]});
   });
 

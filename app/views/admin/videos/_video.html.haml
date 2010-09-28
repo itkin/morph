@@ -1,0 +1,15 @@
+%div[video]
+  %div
+    %label= t :title, :scope => [:activerecord, :attributes, :user], :default => 'title'
+    %span= video.title
+  %div
+    %label= t :description, :scope => [:activerecord, :attributes, :user], :default => 'description'
+    %span= video.description
+  %div
+    %label= t :keywords, :scope => [:activerecord, :attributes, :user], :default => 'keywords'
+    %span= video.keywords
+  %div
+    = raw youtube_embed video
+
+
+

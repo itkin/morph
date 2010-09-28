@@ -1,9 +1,14 @@
 Morph::Application.routes.draw do
 
+
   devise_for :users
 
   namespace "admin" do
     resources :projects, :users, :metadata_types, :parameters
+    resources :videos do
+      get :authorise, :on => :collection
+    end
+
     root :to => 'projects#index'
   end
 

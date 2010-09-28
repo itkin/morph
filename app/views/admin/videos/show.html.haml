@@ -1,0 +1,4 @@
+- unless request.xhr?
+  = render :partial => 'actions', :locals => { :video => video }
+
+= render :partial => @video

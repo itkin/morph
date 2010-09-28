@@ -14,4 +14,7 @@ class Video < YouTubeModel::Base #inherits from ActiveResource::Base
   validates_presence_of :token #needed on remote crud operation
   validates_presence_of :file, :if => Proc.new{|video| video.new? }
 
+  def search(params="")
+
+  end
 end

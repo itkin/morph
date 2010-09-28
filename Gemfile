@@ -14,7 +14,7 @@ gem 'mysql'
 
 # Deploy with Capistrano
  gem 'capistrano'
-gem 'starter', :git => "git://github.com/itkin/starter.git"
+gem 'starter', :git => "git@github.com:itkin/starter.git"
 # To use debugger
  gem 'ruby-debug'
 
@@ -37,3 +37,6 @@ gem "paperclip"
 gem "will_paginate"
 gem 'devise'
 gem "meta_where"
+
+gem "hpricot"
+gem 'gdata'

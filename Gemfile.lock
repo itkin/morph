@@ -6,10 +6,10 @@ GIT
       rails (~> 3.0.0)
 
 GIT
-  remote: git://github.com/itkin/starter.git
-  revision: 58ddf1e5ca6e2497cc62090858d9b9b2f5a7f598
+  remote: git@github.com:itkin/starter.git
+  revision: 22dc2de390e8be22389704295b5db29d58195de9
   specs:
-    starter (0.1.1)
+    starter (0.1.4)
 
 GEM
   remote: http://rubygems.org/
@@ -59,8 +59,10 @@ GEM
       warden (~> 0.10.7)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    gdata (1.1.1)
     haml (3.0.18)
     highline (1.6.1)
+    hpricot (0.8.2)
     i18n (0.4.1)
     linecache (0.43)
     mail (2.2.6.1)
@@ -123,7 +125,9 @@ DEPENDENCIES
   capistrano
   compass
   devise
+  gdata
   haml
+  hpricot
   jquery-rails!
   meta_where
   mysql

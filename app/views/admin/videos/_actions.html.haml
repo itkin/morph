@@ -1,0 +1,4 @@
+.actions
+  = link_to t('actions.show', :default => 'show'), admin_video_path(video)
+  = link_to t('actions.edit', :default => 'edit'), edit_admin_video_path(video)
+  = link_to t('actions.delete', :default => 'delete'), admin_video_path(video), :method => :delete

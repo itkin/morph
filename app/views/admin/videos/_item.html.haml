@@ -1,0 +1,7 @@
+%li[video]
+  %h2
+    = render :partial => 'actions', :locals => { :video => video }
+    = video.title
+  %div
+    = flash_message
+    = render :partial => video
