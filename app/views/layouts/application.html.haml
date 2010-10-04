@@ -21,6 +21,11 @@
           %li
             %label F/
             = Parameter::CELL_PHONE.value
+        #languages
+          - if I18n.locale.to_s == 'fr'
+            = link_to "English version", root_path(:locale => :en)
+          - else
+            = link_to "Version française", root_path(:locale => :fr)
         #contact
           %label Contacts
       #main-content

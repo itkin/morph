@@ -5938,8 +5938,15 @@ if ( "getBoundingClientRect" in document.documentElement ) {
 		if ( elem === elem.ownerDocument.body ) {
 			return jQuery.offset.bodyOffset( elem );
 		}
+    // JQUERYPATCH : http://forum.jquery.com/topic/drag-and-drop-problems-after-ajax-refresh-on-ie
+		var box = null;
+    try {
+       box = elem.getBoundingClientRect();
+    } catch(e) {
+       box = { top : elem.offsetTop, left : elem.offsetLeft }
+    };
 
-		var box = elem.getBoundingClientRect(), doc = elem.ownerDocument, body = doc.body, docElem = doc.documentElement,
+    var doc = elem.ownerDocument, body = doc.body, docElem = doc.documentElement,
 			clientTop = docElem.clientTop || body.clientTop || 0, clientLeft = docElem.clientLeft || body.clientLeft || 0,
 			top  = box.top  + (self.pageYOffset || jQuery.support.boxModel && docElem.scrollTop  || body.scrollTop ) - clientTop,
 			left = box.left + (self.pageXOffset || jQuery.support.boxModel && docElem.scrollLeft || body.scrollLeft) - clientLeft;

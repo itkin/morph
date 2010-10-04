@@ -28,4 +28,3 @@ production:
   timeout: 5000
   username: rails
   password: rails
-  socket: /tmp/mysql.sock

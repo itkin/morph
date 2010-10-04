@@ -1,8 +1,8 @@
 %div[user]
 
-  %div
+  .attr-block
     %label= t :name, :scope => [:activerecord, :attributes, :user], :default => 'name'
     %span= user.name
-  %div
+  .attr-block
     %label= t :email, :scope => [:activerecord, :attributes, :user], :default => 'email'
     %span= user.email

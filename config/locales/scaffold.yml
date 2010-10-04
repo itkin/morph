@@ -1,0 +1,25 @@
+fr:
+  actions:
+    new: Nouveau
+    edit: Editer
+    delete: Supprimer
+    search: Rechercher
+    update: Mettre à jour
+    create: Créer
+    show: Voir
+  pagination:
+    previous: Page précedente
+    next: Page suivante
+
+en:
+  actions:
+    new: New
+    edit: Edit
+    delete: Delete
+    search: Search
+    update: Update
+    create: Create
+    show: Show
+  pagination:
+    previous: Previous
+    next: Next

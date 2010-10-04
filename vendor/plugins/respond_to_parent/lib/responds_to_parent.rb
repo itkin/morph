@@ -27,6 +27,7 @@ module RespondsToParent
   # Use this method of you are posting a form to a hidden IFRAME or if you would like
   # to use IFRAME base RPC.
   def responds_to_parent(&block)
+
     yield
 
     if performed?

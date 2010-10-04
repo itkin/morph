@@ -1,1 +1,12 @@
-= render :partial => "index"
+.scaffold
+  .options
+    = link_to t("actions.new", :default => 'new'), [:new, :admin, :parameter], :class=> 'new'
+    .searchbox-wrapper
+      %span Rechercher
+      = text_field_tag :search, nil, :class => 'search', 'data-source' => admin_parameters_path
+
+  .ajax-accordion-wrapper
+    %ul.ajax-accordion.parameters
+      = render :partial => 'item', :collection => @parameters, :as => :parameter
+
+    = will_paginate @parameters

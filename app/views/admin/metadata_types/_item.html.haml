@@ -1,8 +1,9 @@
 %li[metadata_type]
   %h2
     = render :partial => 'actions', :locals => { :metadata_type => metadata_type }
-    = metadata_type.name
-  %div
+    %span.number= "##{metadata_type.number}"
+    %span.title= metadata_type.name
+  %div{:style => 'display:none'}
     = flash_message
     = render :partial => metadata_type
 

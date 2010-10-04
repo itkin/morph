@@ -1,7 +1,7 @@
-=labelled_form_for [:admin, @parameter] do |f|
+=labelled_form_for [:admin, @parameter], :remote => true do |f|
   %h2= ( @parameter.new_record? ? t('actions.new',:default => 'new') : t('actions.edit', :default => 'edit') ) + ' '+ t('activerecord.models.parameter', :default => 'parameter')
   = f.text_field :key
   = f.text_field :value
-  .buttons
+  .buttons.field
     = f.submit
     = link_to t('actions.cancel', :default => 'cancel'), @parameter.new_record? ? admin_parameters_path : [:admin, @parameter]

@@ -20,6 +20,7 @@ class Admin::ParametersController < Admin::ApplicationController
     @parameter = Parameter.new(params[:parameter])
     if @parameter.save
       flash.now[:notice] = "Parameter a été créé"
+      index
       render :action => :index
     else
       flash.now[:warning] = "Parameter n'a pas pu etre créé"

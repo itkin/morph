@@ -1,85 +1,85 @@
-@import "blueprint/reset"
+$color-title: #2E6E9E
+
+//@import "blueprint/reset"
+
+@import "partials/jquery-ui-1.8.4.custom"
+
+@import "partials/jquery/base"
 
 @import "partials/page"
-@import "partials/itkin/ajax-accordion"
-@import "partials/itkin/form"
 @import "compass/utilities/lists/bullets"
+@import "partials/itkin/scaffold"
+@import "compass/css3/opacity"
 
 .page
-  +container
-  .authentification_links
-    text-align: right
+  #header
+
+    @extend .ui-widget-header
+    color: white
+    padding: 1em
+    +border-radius(5px 5px)
     margin-bottom: 20px
-    a, a:visited
+    h1
+      +text-shadow(black, 0, -1px, 0)
+      font-size: 2.2em
       color: white
+      font-weight: bold
+    .authentification_links
+      text-align: right
+      a, a:visited
+        color: white
+
+
+  +container
 
   #tabs
 
+    +scaffold
+
     form
-      +form
+      label
+        color: #2E6E9E
+      //background: #F5F8F9
+
       .metadata-fields
+        margin: 5px 20px
         float: left
         width: 100%
         label
           float: left
           width: 20%
-        .inline-field
-          float: right
-          width: 78%
-        a.add_metadata
-          clear: right
-          display: block
-
-    .ajax-accordion
-      +ajax-accordion
-
-
-    .pagination, .options
-      text-align: right
-      margin: 10px 0
-      color: #2E6E9E
-      font-weight: bold
-      a, a:visited, a:focus, span
-        color: #2E6E9E
-        text-decoration: none
-        &.current
-          text-decoration: underline
-
-      .disabled
-        display: none
-
-
-
-
-    .project
-      label
-        float: left
-        width: 20%
-      .description
-        position: relative
-        label
-          position: absolute
-          left: 0
-        div
+          margin: 2px 0
+        .inline-fields_wrapper
           float: left
-          position: relative
-          left: 20%
-          width: 78%
-
-      div.metadata-cont
-        float: left
-        width: 100%
-        position: relative
-        ul
-          +no-bullets
-          float: left
-          padding: 0
-          margin: 0
-          li.metadata_type_name
+          width: 80%
+          .inline-field
             float: left
-            span
-              float: left
-              padding-right: 1em
-            ul.metadata_values
-              float: left
+            margin: 5px 0
+            select, input
+              margin: 0
+          a.add_metadata
+            clear: left
+            display: block
+
+    span.number
+      font-size: 1.5em
+      color: #81a7c4
+      +text-shadow(black, 0, -1px, 0)
+    span.title
+      position: relative
+      bottom: 2px
+
+    .attr-block.description, .attr-block.metadata
+      float: right
+      clear: right
+      width: 50%
+      color: #666666
+      ul
+        +no-bullet
+        padding: 0
+        margin-bottom: 0.2em
+        float: right
+        width: 60%
+      label:
+        width: 40%
 

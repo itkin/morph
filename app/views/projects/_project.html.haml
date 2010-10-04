@@ -1,10 +1,14 @@
 %div[project]
-  %h3= project.title
-  .video
-  .metadata= render :partial => 'metadata', :locals => { :metadata => project.metadata }
+  %h3= project.title(I18n.locale)
+  .video= raw youtube_embed project.video, :width => "480px", :height => "260px" if project.video
+  %table.metadata
+    - project.metadata_types.each do |meta_type|
+      %tr
+        %td.metadata_type_name= "#{meta_type.name} "
+        %td= project.metadata.with_type(meta_type).map(&:value).join(', ')
   .images
     = image_tag project.image_2.url(:normal) if project.image_2?
     = image_tag project.image_1.url(:normal), :class=> 'first' if project.image_1?
 
-  .description= project.description
+  .description= project.description(I18n.locale)
 

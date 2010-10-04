@@ -1,0 +1,18 @@
+@mixin tabs
+  @extend .ui-tabs
+  @extend .ui-widget
+  @extend .ui-widget-content
+  @extend .ui-corner-all
+  & > ul
+    @extend .ui-tabs-nav
+    @extend .ui-helper-reset
+    @extend .ui-helper-clearfix
+    @extend .ui-widget-header
+    @extend .ui-corner-all
+    li
+      @extend .ui-state-default
+      @extend .ui-corner-top
+  & > div
+    @extend .ui-tabs-panel
+    @extend .ui-widget-content
+    @extend .ui-corner-bottom

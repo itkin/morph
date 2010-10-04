@@ -1,20 +1,94 @@
-@mixin form($field_margin: '5px 20px')
-  padding: 5px 0
+@import "blueprint"
+@import "compass/utilities/lists/bullets"
+
+
+$red: #990000
+$light_red: #fadbdb
+
+@mixin form
+  +blueprint-form
+  @extend .ui-widget-content
+  @extend .ui-corner-all
   position: relative
+  margin: 10px 0
+  padding: 5px 0
+  line-height: 20px
+
+  h2
+    @extend .ui-state-default
+    @extend .ui-corner-all
+    display: block
+    font-size: 1em
+    padding: 0.5em 0.5em 0.5em 0.7em
+    margin: 0 5px
+    margin-bottom: 20px
+
   .field
+    clear: left
+    margin: 5px 20px
+    input, select, textarea
+      margin: 0
+      &.error_field
+        border: 2px solid $red
+
+  label
     float: left
-    margin: $field_margin
+    font-weight: bold
+    width: 20%
+    padding: 5px 0
+    &.error_field
+      color: $red
+
+  textarea
+    height: 5em
+
+
+  .ajax-loader
+    position: absolute
+    display: none
+    height: 100%
     width: 100%
-    label
-      float: left
-      font-weight: bold
-      width: 20%
-    input, textarea, select
-      float: right
-      width: 78%
-    textarea
-      height: 5em
+    opacity: 0.5
+    background: white
+    +border-radius(5px 5px)
+    z-index: 1000
+
+    div
+      position: absolute
+      height: 100%
+      width: 100%
+      background: image-url('loader.gif') center center no-repeat
+
+  .buttons
+    margin: 20px
+    margin-bottom: 5px
+    text-align: right
 
   .stretcher
     width: 100%
     clear: both
+
+  .errorExplanation
+    margin: 5px 20px
+    border: 2px solid $red
+    background: $light_red
+    +border-radius(5px 5px)
+    padding: 15px
+    color: $red
+    margin-bottom: 20px
+
+    h2
+      color: inherit
+      background: none
+      border: none
+      margin: 0
+      padding: 0
+
+    p
+      margin: 0
+    ul
+      padding: 0
+      padding-left: 20px
+      margin: 0
+
+

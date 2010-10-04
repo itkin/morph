@@ -4,4 +4,7 @@ class MetadataType < ActiveRecord::Base
 
   has_many :metadata, :class_name => "Metadata"
 
+  order_collection_by(:number)
+
+  validates_presence_of :name
 end

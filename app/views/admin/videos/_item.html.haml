@@ -2,6 +2,6 @@
   %h2
     = render :partial => 'actions', :locals => { :video => video }
     = video.title
-  %div
+  %div{:style => 'display:none'}
     = flash_message
     = render :partial => video

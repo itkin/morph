@@ -1,4 +1,5 @@
 mecca:
+  number: 1
   title_fr: La Mecque
   title_en: La Mecque
   description_fr: On a refait la mecque
@@ -7,6 +8,7 @@ mecca:
   image_2_file_name: photo_2.jpg
 
 air_france:
+  number: 2
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -15,6 +17,7 @@ air_france:
   image_2_file_name: photo_2.jpg
 
 project_3:
+  number: 3
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -23,6 +26,7 @@ project_3:
   image_2_file_name: photo_2.jpg
 
 project_4:
+  number: 4
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -31,6 +35,7 @@ project_4:
   image_2_file_name: photo_2.jpg
 
 project_5:
+  number: 5
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -39,6 +44,7 @@ project_5:
   image_2_file_name: photo_2.jpg
 
 project_6:
+  number: 6
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -47,6 +53,7 @@ project_6:
   image_2_file_name: photo_2.jpg
 
 project_7:
+  number: 7
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -55,6 +62,7 @@ project_7:
   image_2_file_name: photo_2.jpg
 
 project_8:
+  number: 8
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -63,6 +71,7 @@ project_8:
   image_2_file_name: photo_2.jpg
 
 project_9:
+  number: 9
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -71,6 +80,7 @@ project_9:
   image_2_file_name: photo_2.jpg
 
 project_10:
+  number: 10
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy
@@ -79,6 +89,7 @@ project_10:
   image_2_file_name: photo_2.jpg
 
 project_11:
+  number: 11
   title_en: Air France
   title_fr: Air France
   description_fr: On refait Roissy

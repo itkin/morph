@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password
   validates_presence_of :password_confirmation, :unless => Proc.new{ |user| user.password.blank? }
+
+  validates_presence_of :name, :email
+  validates_presence_of :password, :if => Proc.new{|user| user.new_record? }
 end

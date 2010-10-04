@@ -19,7 +19,8 @@ class Admin::MetadataTypesController < Admin::ApplicationController
   def create
     @metadata_type = MetadataType.new(params[:metadata_type])
     if @metadata_type.save
-      render :action => :index
+      index
+      render :action => :create
     else
       render :action => :new
     end
@@ -39,4 +40,12 @@ class Admin::MetadataTypesController < Admin::ApplicationController
     @metadata_type.destroy
     render :action => :index
   end
+
+  def reorder
+    @metadata_type = MetadataType.find(params[:id])
+    @metadata_type.update_attribute(:number, params[:position])
+    @metadata_types = MetadataType.find_all_by_id(params[:ids])
+    render :json => @metadata_types.map(&:number)
+  end
+
 end

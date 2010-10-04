@@ -1,22 +1,24 @@
 =labelled_form_for [:admin,@project], :html => { :multipart => true }, :remote => true do |f|
   %h2= ( @project.new_record? ? t('actions.new') : t('actions.edit') ) + t('activerecord.models.project')
+  = f.error_messages
   = f.text_field :title_en
   = f.text_field :title_fr
   = f.file_field :image_1
   = f.file_field :image_2
+  = f.collection_select :video_id, @videos, :id, :title
   .metadata-fields
     %label Méta-données
+    .inline-fields_wrapper
+      =f.fields_for :metadata do |metadata_form|
+        .inline-field
+          %span
+            = metadata_form.hidden_field :id, :class => "metadata_id"
+            = metadata_form.collection_select :metadata_type_id, MetadataType.all, :id, :name, :include_blank => true, :label => false
+            = metadata_form.text_field :value, :label => false
+            = metadata_form.hidden_field :_destroy, :class => 'metadata_destroy'
+            = link_to "supprimer", "#", :class => 'delete_metadata'
 
-    =f.fields_for :metadata do |metadata_form|
-      .inline-field
-        %span
-          = metadata_form.hidden_field :id, :class => "metadata_id"
-          = metadata_form.collection_select :metadata_type_id, MetadataType.all, :id, :name, :include_blank => true, :label => false
-          = metadata_form.text_field :value, :label => false
-          = metadata_form.hidden_field :_destroy, :class => 'metadata_destroy'
-          = link_to "supprimer", "#", :class => 'delete_metadata'
-
-    = link_to "Ajouter", "", :class => "add_metadata"
+      = link_to "Ajouter", "", :class => "add_metadata"
 
   = f.text_area :description_fr
   = f.text_area :description_en

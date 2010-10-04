@@ -1,6 +1,8 @@
-=labelled_form_for [:admin, @metadata_type] do |f|
+=labelled_form_for [:admin, @metadata_type], :remote => true do |f|
+  %h2= ( @metadata_type.new_record? ? t('actions.new',:default => 'new') : t('actions.edit', :default => 'edit') ) + ' un '+ t('activerecord.models.video', :default => 'type de méta-donnée')
+  = f.error_messages
   = f.text_field :name
-  .buttons
+  .buttons.field
     = f.submit
     = link_to "Annuler", [:admin, @metadata_type]
 

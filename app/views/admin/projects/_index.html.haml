@@ -1,9 +1,4 @@
-.options
-  = text_field_tag :search,nil, :class => 'search', 'data-source' => admin_projects_path
-  = link_to t("actions.new", :default => 'new'), [:new, :admin, :project], :class=> 'new'
+%ul.ajax-accordion.multipart.sortable.projects{'data-reorder-url' => reorder_admin_projects_path, 'data-per-page' => @projects.per_page }
+  = render :partial => 'item', :collection => @projects, :as => :project
 
-.ajax-accordion-wrapper
-  %ul.ajax-accordion.projects
-    = render :partial => 'item', :collection => @projects, :as => :project
-
-  = will_paginate @projects
+= will_paginate @projects

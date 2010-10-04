@@ -1,1 +1,14 @@
-= render :partial => "index"
+.scaffold
+
+  .options
+    = link_to t("actions.new", :default => 'new'), new_admin_video_path, :class=> 'new'
+    .searchbox-wrapper
+      %span Rechercher
+      = text_field_tag :search, nil, :class => 'search', 'data-source' => admin_videos_path
+
+
+  .ajax-accordion-wrapper
+    %ul.videos.ajax-accordion
+      = render :partial => 'item', :collection => @videos, :as => :video
+
+    = will_paginate @videos

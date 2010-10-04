@@ -1,4 +1,5 @@
 class Video < YouTubeModel::Base #inherits from ActiveResource::Base
+
   self.default_youtube_options= {:itemPerPage => 10}
 
   schema do

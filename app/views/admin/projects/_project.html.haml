@@ -1,18 +1,28 @@
 %div[project]
 
-  %div
+  .attr-block.description
+    %label Description
+    %ul
+      - [:en, :fr].each do |key|
+        %li= project.description(key)
+
+  .attr-block.metadata
+    %label Méta-données
+    %ul
+      - project.metadata_types.each do |m_type|
+        %li
+          %span= "#{m_type.name} :"
+          %span= project.metadata.with_type(m_type).map(&:value).uniq.join(', ')
+
+
+  .attr-block
     %label Titre
     %span= [:en, :fr].map{|key| project.title(key)}.join(' / ')
-  %div
+  .attr-block
     %label Images
     %span
       = image_tag project.image_1.url(:small)
       = image_tag project.image_2.url(:small)
-  .description
-    %label Description
-    - [:en, :fr].each do |key|
-      %div= project.description(key)
-
-  .metadata-cont
-    %label Méta-données
-    = render :partial => 'metadata', :locals =>{:metadata => project.metadata}
+  .attr-block
+    %label Video
+    = raw youtube_embed(project.video, :width=> '100px', :height => "100px") if not project.video_id.blank? and project.video

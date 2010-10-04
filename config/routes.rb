@@ -4,15 +4,26 @@ Morph::Application.routes.draw do
   devise_for :users
 
   namespace "admin" do
-    resources :projects, :users, :metadata_types, :parameters
+    resources :users, :metadata_types, :parameters
     resources :videos do
       get :authorise, :on => :collection
+    end
+    resources :metadata_types do
+      post :reorder, :on => :collection
+    end
+    resources :projects do
+      collection do
+        get :search
+        post :reorder
+      end
     end
 
     root :to => 'projects#index'
   end
 
-  root :to => "projects#index"
+  scope "(:locale)", :locale => /fr|en/ do
+    root :to => "projects#index"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,9 +1,0 @@
-.options
-  = text_field_tag :search, nil, :class => 'search', 'data-source' => admin_videos_path
-  = link_to t("actions.new", :default => 'new'), new_admin_video_path, :class=> 'new'
-
-.ajax-accordion.users
-  %ul.videos
-    = render :partial => 'item', :collection => @videos, :as => :video
-
-  = will_paginate @videos

@@ -1,0 +1,17 @@
+@mixin accordion
+  @extend .ui-accordion
+  @extend .ui-widget
+  @extend .ui-helper-reset
+  @extend .ui-accordion-icons
+  & > li
+    @extend .ui-accordion-li-fix
+    & > h2
+      @extend .ui-accordion-header
+      @extend .ui-helper-reset
+      @extend .ui-state-default
+      @extend .ui-corner-all
+    & > div
+      @extend .ui-accordion-content
+      @extend .ui-helper-reset
+      @extend .ui-widget-content
+      @extend .ui-corner-bottom

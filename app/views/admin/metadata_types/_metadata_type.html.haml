@@ -1,5 +1,5 @@
 %div[metadata_type]
-
-  %div
+  = flash_message
+  .attr-block
     %label= t :name, :scope => [:activerecord, :attributes, :metadata_type]
     %span= metadata_type.name

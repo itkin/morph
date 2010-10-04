@@ -5,9 +5,9 @@
   $.widget('itkin.searchBox',{
     options: {
       url: null,
-      container: null,
       target: '',
-      delay: 1500
+      delay: 1500,
+      filter: false
     },
     timeout: null,
     loading: 0,
@@ -32,13 +32,14 @@
       if (this.loading < 2 && this.last_search != $.trim(this.element.val()) ){
         ++this.loading;
         this.last_search = $.trim(this.element.val());
-        this.options['container'].fadeTo(500,0,function(){
-          $(this).load(self.options['url'] + '?' + self.element.serialize() + ' ' + self.options.target, function(){
-            --self.loading;
-            clearTimeout(self.timeout);
-            $(this).fadeTo(500,1)
-          });
-        })
+        this._trigger('before',null,{target: self.options.target, value: this.last_search});
+        $.get(self.options['url'], self.element.serialize(),function(data,status){
+          --self.loading;
+          clearTimeout(self.timeout);
+          var $filtered_data  = self.options.filter ? $(data).find(self.options.filter) : $(data);
+          $(self.options.target).html($filtered_data);
+          self._trigger('after',null, {target: self.options.target, response: data, status: status});
+        });
       }
     }
   })

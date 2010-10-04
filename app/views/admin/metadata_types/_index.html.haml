@@ -1,2 +1,2 @@
-%ul.ajax-accordion.metadata_types
+%ul.ajax-accordion.sortable.metadata_types{'data-reorder-url'=> reorder_admin_metadata_types_path }
   = render :partial => 'item', :collection => @metadata_types, :as => :metadata_type

@@ -1,8 +1,9 @@
 =labelled_form_for [:admin, @video],:html => {:multipart => true}, :remote => true do |f|
-  %h2= ( @video.new_record? ? t('actions.new',:default => 'new') : t('actions.edit', :default => 'edit') ) + ' '+ t('activerecord.models.video', :default => 'video')
+  %h2= ( @video.new_record? ? t('actions.new',:default => 'new') : t('actions.edit', :default => 'edit') ) + ' une '+ t('activerecord.models.video', :default => 'video')
   = f.hidden_field :token
   = f.error_messages
   = f.text_field :title
+  = f.select :category, Video.video_categories
   = f.text_area :description
   = f.text_field :keywords
   = f.file_field :file

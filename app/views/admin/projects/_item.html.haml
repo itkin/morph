@@ -2,6 +2,8 @@
   %h2
     = render :partial => 'actions', :locals => { :project => project }
     = image_tag(project.image_1.url(:small))
+    %span.number= "##{project.number}"
     %span.title= project.title
-  %div
+  %div{:style => "display:none"}
+    = flash_message
     = render :partial => project

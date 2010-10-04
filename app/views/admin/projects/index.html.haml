@@ -1,1 +1,11 @@
-= render :partial => "index"
+.scaffold
+
+  .options
+    = link_to t("actions.new", :default => 'new'), [:new, :admin, :project], :class=> 'new'
+    .searchbox-wrapper
+      %span Rechercher
+      = text_field_tag :search,nil, :class => 'search', 'data-source' => admin_projects_path
+
+
+  .ajax-accordion-wrapper
+    = render :partial => 'index'

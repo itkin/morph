@@ -1,9 +1,10 @@
-=labelled_form_for [:admin,@user] do |f|
+=labelled_form_for [:admin,@user], :remote => true do |f|
+  %h2= [@user.new_record? ? "Nouveau" : "Modifier", "l'utilisateur"].join(' ')
   = f.error_messages
   = f.text_field :name
   = f.text_field :email
   = f.password_field :password
   = f.password_field :password_confirmation
-  .buttons
-    = f.submit t('actions.submit')
+  .field.buttons
     = link_to t('actions.cancel'), (@user.new_record? ? admin_users_path : [:admin,@user])
+    = f.submit t('actions.submit')

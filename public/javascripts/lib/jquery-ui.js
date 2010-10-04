@@ -142,7 +142,7 @@ $.fn.extend({
 			.css( "MozUserSelect", "" );
 	},
 
-	disableSelection: function() {
+	ajadisableSelection: function() {
 		return this
 			.attr( "unselectable", "on" )
 			.css( "MozUserSelect", "none" );

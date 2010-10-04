@@ -1,7 +1,13 @@
 class Admin::ProjectsController < Admin::ApplicationController
 
+  before_filter :get_videos, :only => [:edit, :create, :new, :update]
+
+  def get_videos
+    @videos = Video.uploaded_by(Parameter::YOUTUBE_ACCOUNT.value)
+  end
+
   def index
-    @projects = Project.search(params[:search]).paginate :per_page =>10, :page => params[:page], :order => 'created_at DESC'
+    @projects = Project.search(params[:search]).paginate :per_page => 4, :page => params[:page]
   end
 
   def show
@@ -19,26 +25,34 @@ class Admin::ProjectsController < Admin::ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
-      @projects = Project.all
-      responds_to_parent{ render :action => :index }
+      index
+      responds_to_parent { render :action => 'create.js.erb' }
     else
-      responds_to_parent{ render :action => :new }
+      responds_to_parent { render :action => 'new.js.erb' }
     end
   end
 
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      responds_to_parent{ render :action => 'update.js.erb' }
+      responds_to_parent { render :action => 'update.js.erb' }
     else
-      render :action => :edit
+      responds_to_parent { render :action => 'edit.js.erb' }
     end
   end
 
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    @projects = Project.all
-    render :action => :index
+    render :text => nil
   end
+
+
+  def reorder
+    @project = Project.find(params[:id])
+    @project.update_attribute(:number, params[:position])
+    @projects = Project.find_all_by_id(params[:ids])
+    render :json => @projects.map(&:number)
+  end
+
 end

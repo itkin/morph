@@ -25,3 +25,7 @@ phone:
 cell_phone:
   key: cell_phone
   value: +33 (0)1 47 00 40 15
+
+youtube_account:
+  key: youtube_account
+  value: morphvfx

@@ -18,7 +18,6 @@ class Admin::VideosController < Admin::ApplicationController
 
   def index
     @videos = Video.uploaded_by_user(:token => session[:token]).paginate(:per_page =>10, :page => params[:page])
-    render :action => :index
   end
 
   def show
@@ -36,6 +35,7 @@ class Admin::VideosController < Admin::ApplicationController
   def create
     @video = Video.new(params[:video])
     if @video.save
+      index
       flash.now[:notice] = "Video a été créé"
       responds_to_parent {render :action => 'create.js.erb' }
     else
@@ -48,7 +48,7 @@ class Admin::VideosController < Admin::ApplicationController
     @video = Video.find_by_id(params[:id], :token => session[:token])
     if @video.update_attributes(params[:video])
       flash.now[:notice] = "Video a été mis à jour"
-      responds_to_parent {render :action => "update.js.erb" }
+      responds_to_parent {render :action => 'update.js.erb' }
     else
       flash.now[:warning] = "Video n'a pas pu être mis à jour"
       responds_to_parent {render :action => 'edit.js.erb' }
@@ -59,7 +59,7 @@ class Admin::VideosController < Admin::ApplicationController
     @video = Video.find_by_id(params[:id], :token => session[:token])
     if @video.destroy
       flash.now[:notice] = "Video a été détruit"
-      index
+      render :text => nil
     else
       flash.now[:warning] = "Video n'a pas pu être détruit"
       render :text => nil

@@ -81,7 +81,7 @@ a img {
   border: none;
 }
 
-/* line 11, ../../../app/stylesheets/partials/_page.sass */
+/* line 16, ../../../app/stylesheets/partials/_page.sass */
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -391,24 +391,35 @@ body .removed {
   background: #990000;
   color: white;
 }
-/* line 21, ../../../app/stylesheets/partials/_page.sass */
+/* line 26, ../../../app/stylesheets/partials/_page.sass */
 body h1, body h2, body h3, body h4 {
   color: #5fd9e5;
 }
 
 /*@include blueprint-scaffolding("body.bp"); */
-/* line 23, ../../../app/stylesheets/application.sass */
+/* line 25, ../../../app/stylesheets/application.sass */
 body {
   font-size: 10px;
 }
-/* line 25, ../../../app/stylesheets/application.sass */
+/* line 26, ../../../app/stylesheets/application.sass */
+body a, body a:visited {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  cursor: pointer;
+}
+/* line 6, ../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/links/_unstyled-link.scss */
+body a:active, body a:focus, body a:visited:active, body a:visited:focus {
+  outline: none;
+}
+/* line 30, ../../../app/stylesheets/application.sass */
 body .page {
   width: 750px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 27, ../../../app/stylesheets/application.sass */
+/* line 32, ../../../app/stylesheets/application.sass */
 body .page #header {
   display: inline;
   float: left;
@@ -421,7 +432,7 @@ body .page #header {
 * html body .page #header {
   overflow-x: hidden;
 }
-/* line 31, ../../../app/stylesheets/application.sass */
+/* line 36, ../../../app/stylesheets/application.sass */
 body .page #side-content {
   display: inline;
   float: left;
@@ -433,13 +444,13 @@ body .page #side-content {
 * html body .page #side-content {
   overflow-x: hidden;
 }
-/* line 34, ../../../app/stylesheets/application.sass */
+/* line 39, ../../../app/stylesheets/application.sass */
 body .page #side-content h1 {
   color: white;
   font-size: 20px;
   text-transform: uppercase;
 }
-/* line 38, ../../../app/stylesheets/application.sass */
+/* line 43, ../../../app/stylesheets/application.sass */
 body .page #side-content ul {
   list-style: none;
   padding: 0;
@@ -452,7 +463,11 @@ body .page #side-content ul li {
   list-style-type: none;
   margin-left: 0px;
 }
-/* line 43, ../../../app/stylesheets/application.sass */
+/* line 48, ../../../app/stylesheets/application.sass */
+body .page #side-content #languages {
+  margin: 10px 0;
+}
+/* line 50, ../../../app/stylesheets/application.sass */
 body .page #main-content {
   display: inline;
   float: left;
@@ -464,75 +479,69 @@ body .page #main-content {
 * html body .page #main-content {
   overflow-x: hidden;
 }
-/* line 47, ../../../app/stylesheets/application.sass */
+/* line 54, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project {
   margin-bottom: 70px;
   position: relative;
   float: left;
   width: 100%;
 }
-/* line 53, ../../../app/stylesheets/application.sass */
+/* line 60, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project h3 {
   font-size: 20px;
   margin-bottom: 15px;
 }
-/* line 57, ../../../app/stylesheets/application.sass */
+/* line 64, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .video {
   width: 480px;
   height: 260px;
-  background: url('/images/video.jpg?1284411516');
   margin-bottom: 15px;
 }
-/* line 63, ../../../app/stylesheets/application.sass */
+/* line 69, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .images {
   float: right;
   margin-bottom: 15px;
 }
-/* line 66, ../../../app/stylesheets/application.sass */
+/* line 72, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .images img {
   float: right;
 }
-/* line 68, ../../../app/stylesheets/application.sass */
+/* line 74, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .images img.first {
   margin-right: 30px;
 }
-/* line 71, ../../../app/stylesheets/application.sass */
+/* line 77, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .description {
   clear: right;
   float: right;
 }
-/* line 75, ../../../app/stylesheets/application.sass */
+/* line 81, ../../../app/stylesheets/application.sass */
 body .page #main-content .projects .project .metadata {
   float: left;
   width: 170px;
   position: relative;
 }
-/* line 79, ../../../app/stylesheets/application.sass */
-body .page #main-content .projects .project .metadata ul {
-  list-style: none;
-  float: left;
+/* line 85, ../../../app/stylesheets/application.sass */
+body .page #main-content .projects .project .metadata td {
   padding: 0;
-  margin: 0;
-}
-/* line 11, ../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_bullets.scss */
-body .page #main-content .projects .project .metadata ul li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0px;
-}
-/* line 84, ../../../app/stylesheets/application.sass */
-body .page #main-content .projects .project .metadata ul li.metadata_type_name {
-  float: left;
-  clear: left;
 }
 /* line 87, ../../../app/stylesheets/application.sass */
-body .page #main-content .projects .project .metadata ul li.metadata_type_name span {
-  float: left;
-  padding-right: 1em;
+body .page #main-content .projects .project .metadata .metadata_type_name {
   color: #5fd9e5;
   text-transform: capitalize;
+  vertical-align: top;
+  padding-right: 0.5em;
 }
-/* line 92, ../../../app/stylesheets/application.sass */
-body .page #main-content .projects .project .metadata ul li.metadata_type_name ul.metadata_values {
-  float: left;
+/* line 93, ../../../app/stylesheets/application.sass */
+body .page #main-content .pagination {
+  float: right;
+  margin: 10px 0;
+}
+/* line 96, ../../../app/stylesheets/application.sass */
+body .page #main-content .pagination .disabled {
+  display: none;
+}
+/* line 98, ../../../app/stylesheets/application.sass */
+body .page #main-content .pagination .current {
+  text-decoration: underline;
 }

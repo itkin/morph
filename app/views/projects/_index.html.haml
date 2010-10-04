@@ -1,2 +1,4 @@
 .projects
   = render :partial => @projects
+
+= will_paginate @projects, :previous_label => t('previous', :scope => :pagination), :next_label => t('next', :scope => :pagination)

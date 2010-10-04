@@ -3,6 +3,7 @@
 @import "partials/base"
 @import "partials/page"
 @import "compass/utilities/lists/bullets"
+@import "compass/utilities/links/unstyled-link"
 
 //// To configure blueprint, edit the partials/base.sass file.
 //@import "partials/base";
@@ -19,8 +20,12 @@ $side-content-columns: floor($blueprint-grid-columns / 3)
 $main-content-columns: $blueprint-grid-columns - $side-content-columns
 $title-font-size: 20px
 $font-size: 10px
+$color: white
 
 body
+  a, a:visited
+    +unstyled-link
+    cursor: pointer
   font-size: $font-size
   .page
     +container
@@ -40,6 +45,8 @@ body
         padding: 0
         margin: 0
         margin-bottom: 10px
+      #languages
+        margin: 10px 0
     #main-content
       +column($main-content-columns, true)
       width: 480px
@@ -57,7 +64,6 @@ body
           .video
             width: 480px
             height: 260px
-            background: image-url('video.jpg')
             margin-bottom: 15px
 
           .images
@@ -76,20 +82,21 @@ body
             float: left
             width: 170px
             position: relative
-            ul
-              +no-bullets
-              float: left
+            td
               padding: 0
-              margin: 0
-              li.metadata_type_name
-                float: left
-                clear: left
-                span
-                  float: left
-                  padding-right: 1em
-                  color: $blue
-                  text-transform: capitalize
-                ul.metadata_values
-                  float: left
+            .metadata_type_name
+              color: $blue
+              text-transform: capitalize
+              vertical-align: top
+              padding-right: 0.5em
+
+      .pagination
+        float: right
+        margin: 10px 0
+        .disabled
+          display: none
+        .current
+          text-decoration: underline
+
 
 
