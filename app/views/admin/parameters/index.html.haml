@@ -4,7 +4,7 @@
     .searchbox-wrapper
       %span Rechercher
       = text_field_tag :search, nil, :class => 'search', 'data-source' => admin_parameters_path
-
+      = image_tag 'mini-loader.gif', :style => 'display:none'
   .ajax-accordion-wrapper
     %ul.ajax-accordion.parameters
       = render :partial => 'item', :collection => @parameters, :as => :parameter

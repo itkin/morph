@@ -5,7 +5,7 @@
     .searchbox-wrapper
       %span Rechercher
       = text_field_tag :search, nil, :class => 'search', 'data-source' => admin_videos_path
-      = image_tag '', :style => 'display:none'
+      = image_tag 'mini-loader.gif', :style => 'display:none'
 
   .ajax-accordion-wrapper
     %ul.videos.ajax-accordion

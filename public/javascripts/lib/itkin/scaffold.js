@@ -26,7 +26,7 @@ $(function(){
     $(this).searchBox({
       url: $(this).attr('data-source'),
       target: $(this).closest(".ui-tabs-panel").find('.ajax-accordion-wrapper'),
-      filter: '.ajax-accordion-wrapper'
+      filter: '.ajax-accordion-wrapper',
       before: function(e,data){
         $(this).next().show()
       },
