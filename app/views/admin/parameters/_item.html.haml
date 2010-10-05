@@ -3,6 +3,6 @@
     = render :partial => 'actions', :locals => { :parameter => parameter }
     %label= parameter.key + ':'
     = parameter.value
-  %div
+  %div{:style => 'display:none'}
     = flash_message
     = render :partial => parameter

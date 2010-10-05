@@ -2,5 +2,5 @@
   %h2
     = render :partial => 'actions', :locals => { :user => user }
     = user.name
-  %div
+  %div{:style => 'display:none'}
     = render :partial => user

@@ -1,7 +1,7 @@
 class Admin::MetadataTypesController < Admin::ApplicationController
 
   def index
-    @metadata_types = MetadataType.all
+    @metadata_types = MetadataType.search(params[:search])
   end
 
   def show

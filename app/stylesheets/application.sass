@@ -21,35 +21,59 @@ $main-content-columns: $blueprint-grid-columns - $side-content-columns
 $title-font-size: 20px
 $font-size: 10px
 $color: white
+$blue: #5fd9e5
+
 
 body
   a, a:visited
     +unstyled-link
     cursor: pointer
+  a:hover
+    color: $blue
+
+  h1,h2,h3,h4
+    color: $blue
+
   font-size: $font-size
   .page
     +container
     #header
+
       +column($blueprint-grid-columns)
-      height: 120px
-      background: image-url('logo_1.gif') left center no-repeat
     #side-content
       +column($side-content-columns)
       width: 270px
-      h1
-        color: white
-        font-size: $title-font-size
-        text-transform: uppercase
-      ul
-        +no-bullets
-        padding: 0
-        margin: 0
-        margin-bottom: 10px
-      #languages
-        margin: 10px 0
+      height: 300px
+      #side-content-wrapper
+        position: fixed
+        ul#logo
+          height: 100px
+          margin: 0
+          margin-top: 40px
+          position: relative
+          +no-bullets
+          padding: 0
+          li
+            margin: 0
+            padding: 0
+            position: absolute
+            top: 0
+
+        h1
+          color: white
+          font-size: $title-font-size
+          text-transform: uppercase
+        ul
+          +no-bullets
+          padding: 0
+          margin: 0
+          margin-bottom: 10px
+        #languages
+          margin: 10px 0
     #main-content
       +column($main-content-columns, true)
       width: 480px
+      padding-top: 140px
       .projects
         .project
           margin-bottom: 70px

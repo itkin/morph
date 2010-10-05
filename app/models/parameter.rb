@@ -2,8 +2,11 @@ class Parameter < ActiveRecord::Base
 
   cache_constants :key
 
-  def self.search(params=nil)
-    where(params)
+  order_collection_by :number
+
+  def self.search(params = nil)
+    str = params.to_s.split(' ').map{|word| "{:key.matches => \"%#{word}%\"}"}.join(' | ')
+    where eval(str)
   end
 
 

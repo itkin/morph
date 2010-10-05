@@ -4,6 +4,7 @@
     = image_tag(project.image_1.url(:small))
     %span.number= "##{project.number}"
     %span.title= project.title
+    =image_tag(project.online? ? 'circle-check.png' : 'circle-minus.png', :class => 'online')
   %div{:style => "display:none"}
     = flash_message
     = render :partial => project

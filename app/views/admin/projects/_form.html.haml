@@ -1,6 +1,7 @@
 =labelled_form_for [:admin,@project], :html => { :multipart => true }, :remote => true do |f|
   %h2= ( @project.new_record? ? t('actions.new') : t('actions.edit') ) + t('activerecord.models.project')
   = f.error_messages
+  = f.select :online, [["En ligne", true],["Hors ligne", false]]
   = f.text_field :title_en
   = f.text_field :title_fr
   = f.file_field :image_1

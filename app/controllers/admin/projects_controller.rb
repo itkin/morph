@@ -7,7 +7,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def index
-    @projects = Project.search(params[:search]).paginate :per_page => 4, :page => params[:page]
+    @projects = Project.search(params[:search]).paginate :per_page => Project.per_page, :page => params[:page]
   end
 
   def show

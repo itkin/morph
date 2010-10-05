@@ -7,4 +7,10 @@ class MetadataType < ActiveRecord::Base
   order_collection_by(:number)
 
   validates_presence_of :name
+
+  def self.search(params = nil)
+    str = params.to_s.split(' ').map{|word| "{:name.matches => \"%#{word}%\"}"}.join(' | ')
+    where eval(str)
+  end
+
 end

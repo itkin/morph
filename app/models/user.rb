@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :email
   validates_presence_of :password, :if => Proc.new{|user| user.new_record? }
+
+  def self.search(params = nil)
+    str = params.to_s.split(' ').map{|word| "{:name.matches => \"%#{word}%\"} | {:email.matches => \"%#{word}%\"}"}.join(' | ')
+    where eval(str)
+  end
 end

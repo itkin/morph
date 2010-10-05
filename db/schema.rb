@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101001084000) do
+ActiveRecord::Schema.define(:version => 20101005112608) do
 
   create_table "images", :force => true do |t|
     t.integer  "project_id"
@@ -40,8 +40,9 @@ ActiveRecord::Schema.define(:version => 20101001084000) do
   add_index "metadata_types", ["number"], :name => "index_metadata_types_on_number"
 
   create_table "parameters", :force => true do |t|
-    t.string "key"
-    t.string "value"
+    t.string  "key"
+    t.string  "value"
+    t.integer "number"
   end
 
   create_table "projects", :force => true do |t|
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20101001084000) do
     t.datetime "image_2_updated_at"
     t.integer  "number"
     t.string   "video_id"
+    t.boolean  "online",               :default => false
   end
 
   create_table "users", :force => true do |t|

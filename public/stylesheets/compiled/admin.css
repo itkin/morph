@@ -2527,10 +2527,6 @@ body .removed {
   background: #990000;
   color: white;
 }
-/* line 26, ../../../app/stylesheets/partials/_page.sass */
-body h1, body h2, body h3, body h4 {
-  color: #5fd9e5;
-}
 
 /*@include blueprint-scaffolding("body.bp"); */
 /* line 14, ../../../app/stylesheets/admin.sass */
@@ -2752,26 +2748,26 @@ body h1, body h2, body h3, body h4 {
 /* line 11, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion li h2 img {
   float: left;
-  margin-right: 10px;
+  margin-right: 0.2em;
 }
-/* line 15, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+/* line 14, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion li h2 .actions {
   float: right;
 }
-/* line 17, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+/* line 16, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion li h2 .actions a {
   display: inline;
   padding: 0 0.5em;
 }
-/* line 21, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+/* line 20, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion .ui-icon.ui-icon-triangle-1-e.loader {
   background: url('/images/mini-loader.gif?1286146525') left top no-repeat;
 }
-/* line 25, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+/* line 24, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion .ui-accordion-content .attr-block, .page #tabs .ajax-accordion .ajax-accordion > li > div .attr-block {
   margin-bottom: 0.5em;
 }
-/* line 27, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
+/* line 26, ../../../app/stylesheets/partials/itkin/_ajax-accordion.sass */
 .page #tabs .ajax-accordion .ui-accordion-content .attr-block label, .page #tabs .ajax-accordion .ajax-accordion > li > div .attr-block label {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -2938,7 +2934,11 @@ body h1, body h2, body h3, body h4 {
   position: relative;
   bottom: 2px;
 }
-/* line 72, ../../../app/stylesheets/admin.sass */
+/* line 71, ../../../app/stylesheets/admin.sass */
+.page #tabs img.online {
+  height: 27px;
+}
+/* line 74, ../../../app/stylesheets/admin.sass */
 .page #tabs .attr-block.description, .page #tabs .attr-block.metadata {
   float: right;
   clear: right;
@@ -2946,7 +2946,7 @@ body h1, body h2, body h3, body h4 {
   color: #666666;
   label-width: 40%;
 }
-/* line 77, ../../../app/stylesheets/admin.sass */
+/* line 79, ../../../app/stylesheets/admin.sass */
 .page #tabs .attr-block.description ul, .page #tabs .attr-block.metadata ul {
   list-style-image: none;
   list-style-type: none;

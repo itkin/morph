@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def set_locale
-    session[:locale] = I18n.locale = params[:locale] || session[:locale]
+    session[:locale] = I18n.locale = params[:locale] || session[:locale] || 'fr'
   end
 
   def get_layout

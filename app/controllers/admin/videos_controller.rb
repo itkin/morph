@@ -17,7 +17,13 @@ class Admin::VideosController < Admin::ApplicationController
   end
 
   def index
-    @videos = Video.uploaded_by_user(:token => session[:token]).paginate(:per_page =>10, :page => params[:page])
+    @videos = Video.uploaded_by_user(:token => session[:token]).select do |video|
+      if params[:search].blank?
+        true
+      else
+        video.title.match(Regexp.new(params[:search]))
+      end
+    end.paginate(:per_page =>10, :page => params[:page])
   end
 
   def show
