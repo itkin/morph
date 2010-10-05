@@ -2888,6 +2888,11 @@ body .removed {
 .page #tabs .searchbox-wrapper span {
   padding-right: 0.5;
 }
+/* line 71, ../../../app/stylesheets/partials/itkin/_scaffold.sass */
+.page #tabs .searchbox-wrapper img {
+  position: relative;
+  top: 3px;
+}
 /* line 40, ../../../app/stylesheets/admin.sass */
 .page #tabs form label {
   color: #2e6e9e;
