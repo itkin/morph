@@ -5,12 +5,6 @@ GIT
     jquery-rails (0.1.2)
       rails (~> 3.0.0)
 
-GIT
-  remote: git@github.com:itkin/starter.git
-  revision: 22dc2de390e8be22389704295b5db29d58195de9
-  specs:
-    starter (0.1.4)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -134,5 +128,4 @@ DEPENDENCIES
   paperclip
   rails (= 3.0.0)
   ruby-debug
-  starter!
   will_paginate
