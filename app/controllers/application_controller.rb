@@ -5,10 +5,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  def render_js(*agrs)
-    escape_javascript render(*agrs)
-  end
-
   def set_locale
     session[:locale] = I18n.locale = params[:locale] || session[:locale] || 'fr'
   end
